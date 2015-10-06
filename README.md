@@ -1,3 +1,3 @@
 # LeetCode
-https://leetcode.com/
-C++  &amp; Python  Solution
+https://leetcode.com/  
+C++  &amp; Python  Solution  
