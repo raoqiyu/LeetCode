@@ -1,0 +1,28 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        # row[0] = 0, if this row should be zero
+        # col[0] = 0, if this col shoule be zero
+        # matrix[0][0] is confused, use an additional variable first_col_shoube_zero 
+        
+        n,m = len(matrix), len(matrix[0])
+        first_col_shoube_zero = False
+        for i in range(0,n):
+            if matrix[i][0] == 0:
+                first_col_shoube_zero = True
+            for j in range(1,m):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+        
+        for i in range(n-1, -1, -1):
+            for j in range(m-1, 0, -1):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+            if first_col_shoube_zero:
+                matrix[i][0] = 0
+                        
+            
+                    
