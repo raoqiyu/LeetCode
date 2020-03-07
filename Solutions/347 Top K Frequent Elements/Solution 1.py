@@ -50,7 +50,7 @@ class Solution:
                     
             
     def build_heap(self):
-        for i in range(self.capacity//2, -1, -1):
+        for i in range(self.capacity//2-1, -1, -1):
             self.heapify(i)
 
     def insert_heap(self, num_cnt):
