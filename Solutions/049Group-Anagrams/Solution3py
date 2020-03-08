@@ -1,0 +1,17 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ana = collections.defaultdict(list)
+        
+        for s in strs:
+            s_repr = [0]*26
+            for c in s:
+                s_repr[ord(c)-ord('a')] += 1
+                
+            ana[tuple(s_repr)].append(s)
+            
+        ret = []
+        for i in ana.keys():
+            ret.append(ana[i])
+        return ret
+        
+        
